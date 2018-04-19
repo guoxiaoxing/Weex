@@ -1,4 +1,4 @@
-# <img src="https://github.com/guoxiaoxing/Weex/raw/master/art/logo.png" alt="Phoenix" width="40" height="40" align="bottom" /> Phoenix
+# <img src="https://github.com/guoxiaoxing/Weex/raw/master/art/logo.png" alt="Weex" width="40" height="40" align="bottom" /> Weex
 
 ## 功能介绍
 
