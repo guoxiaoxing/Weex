@@ -1,38 +1,13 @@
-## Commands
+# <img src="https://github.com/guoxiaoxing/Weex/raw/master/art/logo.png" alt="Phoenix" width="40" height="40" align="bottom" /> Phoenix
 
-### npm start
+## 功能介绍
 
-Starts the development server for you to preview your weex page on browser.
-You can also scan the QR code using weex playground to preview weex page on native.
+[![Download](https://api.bintray.com/packages/guoxiaoxing/maven/Weex/images/download.svg)](https://bintray.com/guoxiaoxing/maven/Weex/_latestVersion)
+[![License](https://img.shields.io/github/license/guoxiaoxing/Weex.svg)](https://jitpack.io/#guoxiaoxing/Weex) 
+[![Stars](https://img.shields.io/github/stars/guoxiaoxing/Weex.svg)](https://jitpack.io/#guoxiaoxing/Weex) 
+[![Forks](https://img.shields.io/github/forks/guoxiaoxing/Weex.svg)](https://jitpack.io/#guoxiaoxing/Weex) 
+[![Forks](https://img.shields.io/github/issues/guoxiaoxing/Weex.svg)](https://jitpack.io/#guoxiaoxing/Weex)
+ 
+> The principle analysis and best practice for Weex.
 
-### npm run dev
-
-Open the code compilation task in watch mode.
-
-### npm run ios
-
-(Mac only, requires Xcode)
-Starts the development server and loads your app in an iOS simulator.
-
-### npm run android
-
-(Requires Android build tools)
-Starts the development server and loads your app on a connected Android device or emulator.
-
-### npm run pack:ios
-
-(Mac only, requires Xcode)
-Packaging ios project into ipa package.
-
-### npm run pack:android
-
-(Requires Android build tools)
-Packaging android project into apk package.
-
-### npm run pack:web
-
-Packaging html5 project into `web/build` folder.
-
-### npm run test
-
-Starts the test runner.
+- [官方网站](https://weex.incubator.apache.org/cn/)
