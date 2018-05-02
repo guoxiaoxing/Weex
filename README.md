@@ -15,6 +15,6 @@
 
 ## 原理分析
 
-- [Weex for Android原理分析：原理概述](https://github.com/guoxiaoxing/Weex/tree/master/doc/原理分析/Weex for Android原理分析：原理概述.md)
+- [WeexforAndroid原理分析：原理概述](https://github.com/guoxiaoxing/Weex/tree/master/doc/原理分析/WeexforAndroid原理分析：原理概述.md)
 
 ## 最佳实践
