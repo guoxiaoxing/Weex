@@ -12,10 +12,15 @@
 
 **文章目录**
 
-
 - 官方网站：http://weex.apache.org/cn/
 
-Weex设计理念
+本篇文章开始我们来分析Weex的原理实现。
+
+Weex源码目录如下所示：
+
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_source_code_structure.png" width="500">
+
+Weex的设计理念
 
 - 性能为王：Weex会将JS组件渲染成原生的UI，达到最佳的性能和用户体验，Weex还采用多种手段优化性能表现，包括优化 native 与 JavaScript 的通信频率和通信量，使用二进制方式提升单次通信的耗时等，未来还会通过跨平台内核将 DOM 管理移至 native 层实现来彻底解决 native 与 JavaScript 层异步通信成本的问题，从多个维度提升 Weex 引擎的性能。
 - 交互体验：Weex希望完全做到iOS、Android与Web真正的跨度，一套代码，三端运行。
@@ -26,7 +31,7 @@ Weex设计理念
 
 Weex运行原理如下所示：
 
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_principle.png">
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_principle.png" width="500">
 
 1. Weex会将JavaScript代码生成一个Weex的JS Bundle。
 2. 开发者可以将生成的 JS bundle 部署至云端，然后通过网络请求或预下发的方式加载至用户的移动应用客户端。
