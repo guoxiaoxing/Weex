@@ -38,8 +38,8 @@
 Weex整体源码与Weex Android SDK源码目录如下所示：
 
 <p>
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_source_code.png">
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_android_source_code.png">
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_source_code.png" height="600">
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_android_source_code.png" height="600">
 <p/>
 
 Weex架构设计如下所示:
