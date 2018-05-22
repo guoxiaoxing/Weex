@@ -1,4 +1,4 @@
-# WeexForAndroid原理分析：原理概述
+# WeexForAndroid原理分析：架构分析与原理概述
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 
@@ -17,7 +17,7 @@
 
 先附上前端大佬同时也是Weex技术方案的创立者[@勾股](https://github.com/Jinjiang)的关于无线电商动态化的三篇文章:
 
-- [对无线电商动态化方案的思考（一）]https://github.com/amfe/article/issues/13)
+- [对无线电商动态化方案的思考（一）](https://github.com/amfe/article/issues/13)
 - [对无线电商动态化方案的思考（二）](https://github.com/amfe/article/issues/14)
 - [对无线电商动态化方案的思考（三）](https://github.com/amfe/article/issues/15)
 
@@ -35,17 +35,16 @@
 
 注: 更多关于Weex与React Native的对比大家可以参考这篇文章[weex vs react-native](https://yq.aliyun.com/articles/57996).
 
-Weex源码目录如下所示：
+Weex整体源码与Weex Android SDK源码目录如下所示：
 
+<p>
 <img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_source_code.png">
-
-Weex Android SDK的源码目录如下所示:
-
 <img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_android_source_code.png">
+<p/>
 
 Weex架构设计如下所示:
 
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_source_code_structure.png" width="500">
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_structure.png" width="500">
 
 我们来简单介绍下各个层次的作用.
 
