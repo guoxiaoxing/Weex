@@ -53,7 +53,7 @@ Weex整体源码与Weex Android SDK源码目录如下所示：
 
 Weex架构设计如下所示:
 
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_structure.png" width="500">
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_structure.png"/>
 
 我们来简单介绍下各个层次的作用.
 
@@ -73,10 +73,11 @@ Weex架构设计如下所示:
 - Render: Render主要负责渲染Native View, 运行在UI线程中, 由WxRenderManager统一管理, 具体操作由WxRenderStatement来完成.
 - Dom: Dom主要用来操作Dom结构, 生成对应的Dom Tree. 运行在Dom线程中, 由WXDomManager统一管理.
 
-
 聊完了Weex的架构设计, 我们再简单来看一下它的运行原理, 让大家有个整体的印象. Weex运行原理如下所示：
 
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_principle.png" width="500">
+
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_principle.png"/>
+
 
 整个流程如下所示:
 
@@ -132,6 +133,7 @@ public class WXApplication extends Application {
 - private IWebSocketAdapterFactory webSocketAdapterFactory;// WebSocket协议实现
 - private IWXJSExceptionAdapter mJSExceptionAdapter;// 异常处理
 - private String framework;
+
 
 WXSDKEngine.initialize()方法会继续调用WXSDKEngine.doInitInternal()来完成初始化操作, 我们来具体看看它都做了什么.
 
@@ -209,7 +211,7 @@ public class WXSDKEngine {
 
 老样子, 我们先不讲各种理论, 从我们能接触到细节入手开始分析.
 
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_render_sequence.png" width="500">
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_render_sequence.png"/>
 
 整个渲染流程可以概括为:
 
@@ -243,7 +245,7 @@ Dom节点的数据是用json格式来描述的, 如下所示:
 
 Weex里有三大线程, 线程模型序列图如下所示:
 
-<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_thread_sequence.png" width="500">
+<img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_thread_sequence.png"/>
 
 - JSBridgeThread: 用来进行Java JNI层与V8 Engine之间的通信, 同时还负责初始化JS Framework, 调用JS, 调用Native.
 - UIThread: 用来操作与渲染视图, 数据绑定等.
