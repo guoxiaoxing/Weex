@@ -35,6 +35,8 @@
 
 注: 更多关于Weex与React Native的对比大家可以参考这篇文章[weex vs react-native](https://yq.aliyun.com/articles/57996).
 
+## 架构分析
+
 Weex整体源码与Weex Android SDK源码目录如下所示：
 
 <p>
@@ -64,11 +66,16 @@ Weex架构设计如下所示:
 - Render: Render主要负责渲染Native View, 运行在UI线程中, 由WxRenderManager统一管理, 具体操作由WxRenderStatement来完成.
 - Dom: Dom主要用来操作Dom结构, 生成对应的Dom Tree. 运行在Dom线程中, 由WXDomManager统一管理.
 
+## 原理概述
+
 聊完了Weex的架构设计, 我们再简单来看一下它的运行原理, 让大家有个整体的印象. Weex运行原理如下所示：
+
 
 <img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_principle.png" width="500">
 
-1. Weex会将JavaScript代码生成一个Weex的JS Bundle。
+整个流程如下所示:
+
+1. Weex会通过Weex DSL将we文件解析成一个标准的JS文件, 并将这些JS文件打包成JS Bundle.
 2. 开发者可以将生成的 JS bundle 部署至云端，然后通过网络请求或预下发的方式加载至用户的移动应用客户端。
 3. 在移动应用客户端里，Weex SDK 会准备好一个 JavaScript 执行环境，并且在用户打开一个 Weex 页面时在这个执行环境中执行
    相应的 JS bundle，并将执行过程中产生的各种命令发送到 native 端进行界面渲染、数据存储、网络通信、调用设备功能及用户交互响应等功能；同时，如果
@@ -83,6 +90,7 @@ Weex架构设计如下所示:
 
 官方网站
 
+- [weexteam](https://github.com/weexteam)
 - [官方网站](https://weex.apache.org/cn/)
 - [讨论组](https://github.com/weexteam/article/issues)
 
@@ -91,6 +99,11 @@ Weex架构设计如下所示:
 - [Android&iOS集成指南](https://weex.incubator.apache.org/cn/guide/integrate-to-your-app.html)
 - [H5集成指南](https://github.com/weexteam/article/issues/10)
 
-为了方便没有前端基础的客户端工程师如何想开始学习Weex, 这边也给大家列了一份Weex技术图谱.
+其他资源
+
+- [weex-hackernews](https://github.com/weexteam/weex-hackernews)
+- [weex-vue-examples](https://github.com/Hanks10100/weex-vue-examples)
+
+为了方便没有前端基础的客户端工程师如何想开始学习Weex, 这边也给大家列了一份Weex技术体系图.
 
 <img src="https://github.com/guoxiaoxing/Weex/raw/master/art/principle/weex_system.png">
