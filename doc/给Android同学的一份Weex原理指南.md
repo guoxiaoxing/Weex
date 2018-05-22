@@ -81,12 +81,9 @@ Weex架构设计如下所示:
 
 整个流程如下所示:
 
-1. Weex会通过Weex DSL将we文件解析成一个标准的JS文件, 并将这些JS文件打包成JS Bundle.
-2. 开发者可以将生成的 JS bundle 部署至云端，然后通过网络请求或预下发的方式加载至用户的移动应用客户端。
-3. 在移动应用客户端里，Weex SDK 会准备好一个 JavaScript 执行环境，并且在用户打开一个 Weex 页面时在这个执行环境中执行
-   相应的 JS bundle，并将执行过程中产生的各种命令发送到 native 端进行界面渲染、数据存储、网络通信、调用设备功能及用户交互响应等功能；同时，如果
-   用户希望使用浏览器访问这个界面，那么他可以在浏览器里打开一个相同的 web 页面，这个页面和移动应用使用相同的页面源代码，但被编译成适合Web展示的JS 
-   Bundle，通过浏览器里的 JavaScript 引擎及 Weex SDK 运行起来的。
+① Weex会通过Weex DSL将we文件解析成一个标准的JS文件, 并将这些JS文件打包成JS Bundle.
+② 开发者可以将生成的 JS bundle 部署至云端，然后通过网络请求或预下发的方式加载至用户的移动应用客户端。
+③ 在移动应用客户端里，Weex SDK 会准备好一个 JavaScript 执行环境，并且在用户打开一个 Weex 页面时在这个执行环境中执行相应的 JS bundle，并将执行过程中产生的各种命令发送到 native 端进行界面渲染、数据存储、网络通信、调用设备功能及用户交互响应等功能；同时，如果用户希望使用浏览器访问这个界面，那么他可以在浏览器里打开一个相同的 web 页面，这个页面和移动应用使用相同的页面源代码，但被编译成适合Web展示的JS Bundle，通过浏览器里的 JavaScript 引擎及 Weex SDK 运行起来的。
    
 注：JavaScript执行环境指的是JavaScriptCore。
 
@@ -136,6 +133,7 @@ public class WXApplication extends Application {
 
 
 WXSDKEngine.initialize()方法会继续调用WXSDKEngine.doInitInternal()来完成初始化操作, 我们来具体看看它都做了什么.
+
 
 ```java
 public class WXSDKEngine {
@@ -215,9 +213,9 @@ public class WXSDKEngine {
 
 整个渲染流程可以概括为:
 
-1. createBody/addDom完成从Dom Tree到Component Tree的映射.
-2. layout操作, 有batch驱动, 每隔16ms执行一批任务, 开始渲染.
-3. 生成的root component会被添加到Render Component.
+① createBody/addDom完成从Dom Tree到Component Tree的映射.
+② layout操作, 有batch驱动, 每隔16ms执行一批任务, 开始渲染.
+③ 生成的root component会被添加到Render Component.
 
 Dom节点的数据是用json格式来描述的, 如下所示:
 
@@ -266,14 +264,10 @@ msg.obj = task;
 WXSDKManager.getInstance().getWXDomManager().sendMessage(msg);
 ```
 
-
-
 - UIThread 与 JSBridgeThread： JSBridgeThread 不会直接发送任务给 UIThread ， UIThread 发送给 JSBridgeThread 的任务有初始化js framework、开始渲染页面createInstance、发送event事件等。
 - UIThread 与 DomThread： UIThread 会在销毁instance的时候发送任务给 DomThread 进行清理，DomThread 发送任务给 UIThread 会分为两步，这两步会是一个task：发送前会重新计算CSSLayout的耗时操作，这部分的操作是在DomThread中进行。
 发送 runnable 到 UIThread，runnable执行的就是view的渲染流程，在UIThread中进行。说明： 这一整个task是每隔16ms自动触发，也是说一旦dom操作过多，就会拖累帧率。
 - JSBridgeThread 与 DomThread：DomThread不会直接发送任务给JSBridgeThread 。js runtime会通过jni发送指令到 java 层，这一部分在JSBridgeThread中，然后JSBridgeThread会发送任务给 DomThread 进行各种 Dom 操作。
-
-
 
 ## 附录
 
